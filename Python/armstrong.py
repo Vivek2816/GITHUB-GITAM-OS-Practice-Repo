@@ -18,3 +18,4 @@ if is_armstrong_arith(number):
     print(f"{number} is an Armstrong number.")
 else:
     print(f"{number} is not an Armstrong number.")
+#updated
