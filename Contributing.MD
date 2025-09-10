@@ -38,7 +38,7 @@ It can be:
    pip install -r requirements.txt  # if Python
    ```
 
-   HERE NOT NEED MOSTLY
+   MOSTLY not needed
 
    (Check the README for details.)
 
@@ -71,7 +71,7 @@ git checkout -b my-feature
   ```bash
   // some test command if given
   ```
-  EXAMPLE ONY, Check README.md for details
+  EXAMPLE ONLY, Check README.md for details
 * If not, just make sure your changes don’t break anything.
 
 ---
