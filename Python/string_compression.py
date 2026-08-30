@@ -1,29 +1,26 @@
 # hard-level
 
-# String compression with in-place modification typically means 
-# compressing a string by replacing consecutive repeated characters 
-# with the character followed by the count, 
-# all done directly in the original string's space (or an array of characters) without using extra space for another string.
+def string_compress(s):
+    chars = list(s)
+    n = len(chars)
+    new_index = 0
+    i = 0
 
-def String_compres(s):
-    chars=list(s)
-    n=len(chars)
-    i=0
-    new=0
-    
-    while i<n:
-        j=i
-        while j<n and chars[j]==chars[i]:
-            j+=1
-        chars[new]=chars[i]
-        new+=1
-        if j-i>1:
-            chars[new]=str(j-i)
-            new+=1
-        i=j
-    return "".join(chars[:new])
-    
-String=input("Enter String for compression: ")
-print(String_compres(String))
+    while i < n:
+        count = 1
+        # count consecutive characters
+        while i + 1 < n and chars[i] == chars[i + 1]:
+            count += 1
+            i += 1
+        chars[new_index] = chars[i]
+        new_index += 1
+        if count > 1:
+            for c in str(count):  # handle multi-digit counts
+                chars[new_index] = c
+                new_index += 1
+        i += 1
 
-# try solving it iteratively
+    return "".join(chars[:new_index])
+
+string = input("Enter String for compression: ")
+print(string_compress(string))
